@@ -41,43 +41,45 @@ export default function LoginPage() {
 
     router.push("/dashboard");
   }
-
-  if (!mounted) return null; 
+  // Prevents hydration mismatch
+  if (!mounted) return null;
 
   return (
-    <div className="flex min-h-screen items-center justify-center bg-gradient-to-br from-sky-50 to-sky-100 dark:from-gray-900 dark:to-gray-800 px-4">
+    <div className="flex min-h-screen items-start justify-center px-4 py-6">
       <div className="w-full max-w-md rounded-2xl bg-white dark:bg-gray-900 shadow-xl p-8">
-        <h1 className="text-3xl font-bold text-center mb-2">
-          Welcome to
-          <span className="text-sky-600 dark:text-sky-400">Music</span>
+        <h1 className="text-xl md:text-3xl font-bold text-center mb-2">
+          Welcome to{" "}
+          <span className="text-purple-600 dark:text-purple-400">
+            Music Track
+          </span>
         </h1>
-        <p className="text-center text-sm text-gray-600 dark:text-gray-400 mb-6">
-          Mock login — use any username & password
+        <p className="text-center text-sm text-purple-600 dark:text-purple-400 mb-6">
+          Mock login - use any username & password
         </p>
 
         {mounted && (
           <form onSubmit={handleSubmit} className="space-y-5">
             <div>
-              <label className="block text-sm font-medium text-gray-700 dark:text-gray-300">
+              <label className="block text-sm font-medium text-purple-700 dark:text-purple-300">
                 Username
               </label>
               <input
                 value={username}
                 onChange={(e) => setUsername(e.target.value)}
-                className="mt-1 w-full rounded-lg border border-gray-300 dark:border-gray-600 px-3 py-2 bg-gray-50 dark:bg-gray-800 focus:ring-2 focus:ring-sky-500 focus:outline-none"
+                className="mt-1 w-full rounded-lg border border-purple-300 dark:border-purple-700 px-3 py-2 bg-purple-50 dark:bg-purple-900 text-purple-800 dark:text-purple-100 focus:ring-2 focus:ring-purple-400 dark:focus:ring-purple-600 focus:outline-none"
                 placeholder="Enter your username"
               />
             </div>
 
             <div>
-              <label className="block text-sm font-medium text-gray-700 dark:text-gray-300">
+              <label className="block text-sm font-medium text-purple-700 dark:text-purple-300">
                 Password
               </label>
               <input
                 type="password"
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
-                className="mt-1 w-full rounded-lg border border-gray-300 dark:border-gray-600 px-3 py-2 bg-gray-50 dark:bg-gray-800 focus:ring-2 focus:ring-sky-500 focus:outline-none"
+                className="mt-1 w-full rounded-lg border border-purple-300 dark:border-purple-700 px-3 py-2 bg-purple-50 dark:bg-purple-900 text-purple-800 dark:text-purple-100 focus:ring-2 focus:ring-purple-400 dark:focus:ring-purple-600 focus:outline-none"
                 placeholder="Enter your password"
               />
             </div>
@@ -91,7 +93,7 @@ export default function LoginPage() {
             <div className="w-full">
               <button
                 type="submit"
-                className="w-full px-6 py-2 bg-sky-600 hover:bg-sky-700 text-white rounded-lg shadow transition-colors hover:cursor-pointer"
+                className="w-full px-6 py-2 bg-purple-600 hover:bg-purple-700 dark:bg-purple-500 dark:hover:bg-purple-600 text-white rounded-lg shadow transition-colors hover:cursor-pointer"
               >
                 Login
               </button>
@@ -99,7 +101,7 @@ export default function LoginPage() {
 
             <button
               type="button"
-              className="text-sm text-gray-600 dark:text-gray-400 hover:underline"
+              className="text-sm text-purple-600 dark:text-purple-400 hover:underline"
               onClick={() => {
                 setUsername("demo");
                 setPassword("demo");

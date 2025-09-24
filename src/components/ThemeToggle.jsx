@@ -11,7 +11,6 @@ export default function ThemeToggle() {
     const initial =
       saved ||
       (typeof window !== "undefined" &&
-      window.matchMedia &&
       window.matchMedia("(prefers-color-scheme: dark)").matches
         ? "dark"
         : "light");
