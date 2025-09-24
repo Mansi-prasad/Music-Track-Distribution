@@ -74,7 +74,6 @@ let tracks = [
 
 ## Getting Started
 ``` bash
-Copy code
 # Clone the repository
 git clone https://github.com/Mansi-prasad/Music-Track-Distribution
 
@@ -87,8 +86,11 @@ npm install
 # Run the development server
 npm run dev
 
+# open in browser
+http://localhost:3000/
+
 ```
 ---
 
-## Live Link
-
+## Live Link  
+https://music-track-distribution.vercel.app/

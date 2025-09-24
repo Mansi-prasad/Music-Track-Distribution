@@ -23,40 +23,45 @@ export default function Header() {
         </div>
 
         {/* for desktop */}
-        <nav className="hidden sm:flex items-center gap-3">
-          {loggedIn ? (
-            <>
+        <div className="flex gap-1">
+          <nav className="hidden sm:flex items-center gap-3">
+            {loggedIn ? (
+              <>
+                <Link
+                  href="/dashboard"
+                  className="px-3 py-2 text-lg rounded text-gray-900 dark:text-gray-100 hover:bg-gray-100 dark:hover:bg-gray-800"
+                >
+                  Dashboard
+                </Link>
+                <Link
+                  href="/upload"
+                  className="px-3 py-2 text-lg rounded text-gray-900 dark:text-gray-100 hover:bg-gray-100 dark:hover:bg-gray-800"
+                >
+                  Upload
+                </Link>
+                <button
+                  onClick={logout}
+                  className="flex gap-2 items-center px-3 py-2 text-md rounded bg-red-600 text-white hover:bg-red-700 dark:bg-red-500 dark:hover:bg-red-600"
+                >
+                  Logout
+                  <MdLogout />
+                </button>
+              </>
+            ) : (
               <Link
-                href="/dashboard"
-                className="px-3 py-2 text-lg rounded text-gray-900 dark:text-gray-100 hover:bg-gray-100 dark:hover:bg-gray-800"
+                href="/"
+                className="flex gap-1 items-center px-6 py-2 font-semibold rounded bg-purple-600 text-white text-md hover:bg-purple-700 dark:bg-purple-500 dark:hover:bg-purple-600"
               >
-                Dashboard
+                Login
+                <MdOutlineLogin />
               </Link>
-              <Link
-                href="/upload"
-                className="px-3 py-2 text-lg rounded text-gray-900 dark:text-gray-100 hover:bg-gray-100 dark:hover:bg-gray-800"
-              >
-                Upload
-              </Link>
-              <button
-                onClick={logout}
-                className="flex gap-2 items-center px-3 py-2 text-md rounded bg-red-600 text-white hover:bg-red-700 dark:bg-red-500 dark:hover:bg-red-600"
-              >
-                Logout
-                <MdLogout />
-              </button>
-            </>
-          ) : (
-            <Link
-              href="/"
-              className="flex gap-1 items-center px-6 py-2 font-semibold rounded bg-purple-600 text-white text-md hover:bg-purple-700 dark:bg-purple-500 dark:hover:bg-purple-600"
-            >
-              Login
-              <MdOutlineLogin />
-            </Link>
-          )}
-        </nav>
-
+            )}
+          </nav>
+          {/* Theme Toggle */}
+          <div className="hidden sm:flex ml-4">
+            <ThemeToggle />
+          </div>
+        </div>
         {/* for mobile  */}
         <div className="sm:hidden relative">
           <button
@@ -100,11 +105,6 @@ export default function Header() {
               )}
             </>
           )}
-        </div>
-
-        {/* Theme Toggle */}
-        <div className="hidden sm:flex ml-4">
-          <ThemeToggle />
         </div>
       </div>
     </header>
