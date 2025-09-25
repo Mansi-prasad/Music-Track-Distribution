@@ -56,16 +56,16 @@ export default function DashboardPage() {
             </p>
           </div>
 
-          <div className="flex gap-3 w-full md:w-auto">
+          <div className="flex gap-2 w-full md:w-auto">
             <input
               placeholder="Search by title or artist..."
               value={query}
               onChange={(e) => setQuery(e.target.value)}
-              className="flex-1 px-3 py-2 rounded-md border border-purple-300 dark:border-purple-700 bg-purple-50 dark:bg-purple-900 text-purple-800 dark:text-purple-100 focus:outline-none focus:ring-2 focus:ring-purple-400 dark:focus:ring-purple-600"
+              className="flex-1 p-2 rounded-md border border-purple-300 dark:border-purple-700 bg-purple-50 dark:bg-purple-900 text-purple-800 dark:text-purple-100 focus:outline-none focus:ring-2 focus:ring-purple-400 dark:focus:ring-purple-600"
             />
             <button
               onClick={() => router.push("/upload")}
-              className="flex gap-2 items-center px-4 py-2 bg-purple-600 hover:bg-purple-700 dark:bg-purple-500 dark:hover:bg-purple-600 text-white rounded-md transition-colors duration-200"
+              className="flex gap-2 items-center px-3 py-2 bg-purple-600 hover:bg-purple-700 dark:bg-purple-500 dark:hover:bg-purple-600 text-white rounded-md transition-colors duration-200"
             >
               <IoCloudUploadOutline />
               Upload

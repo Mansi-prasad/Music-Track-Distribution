@@ -64,12 +64,15 @@ export default function Header() {
         </div>
         {/* for mobile  */}
         <div className="sm:hidden relative">
-          <button
-            onClick={() => setMenuOpen(!menuOpen)}
-            className="p-2 rounded hover:bg-gray-100 dark:hover:bg-gray-800"
-          >
-            <MdMenu size={28} />
-          </button>
+          <div className="flex items-center justify-end gap-1">
+            <ThemeToggle />
+            <button
+              onClick={() => setMenuOpen(!menuOpen)}
+              className="p-2 rounded hover:bg-gray-100 dark:hover:bg-gray-800"
+            >
+              <MdMenu size={28} />
+            </button>
+          </div>
 
           {/* Dropdown Menu */}
           {menuOpen && (
